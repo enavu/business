@@ -64,7 +64,7 @@ linear_regressor = LinearRegression()  # create object for the class
 linear_regressor.fit(x, y)  # perform linear regression
 y_predm = linear_regressor.predict(x)
 dfMonth['y_pred'] = linear_regressor.predict(x)  # make predictions
-dfMonth.to_csv('monthly_linear_regression.csv')
+dfMonth.to_json('monthly_linear_regression.json')
 
 ###time series
 dfMonth['Month'] = pd.to_datetime(dfMonth['Month'])
