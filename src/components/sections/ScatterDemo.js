@@ -12,7 +12,7 @@ const defaultProps = {
   ...SectionSplitProps.defaults
 }
 
-const FeaturesScatter = ({
+const ScatterDemo = ({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -60,15 +60,14 @@ const FeaturesScatter = ({
     { x: 80, y: 90 }
   ];
 
-  
+  d3.csv("../../data_prep/monthly_linear_regression.csv").then(data => {
+     console.log(data)
+  });
   
   useEffect(() => {
-       
-    d3.json("/data_prep/monthly_linear_regression.json").then(data => {
     const margin = { top: 10, right: 40, bottom: 30, left: 30 },
-    
-    width = 450 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+      width = 450 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
 
     const svg = d3
       .select("#area")
@@ -77,40 +76,26 @@ const FeaturesScatter = ({
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
-    
-    const dataObjx = Object.values(data.Total_sales);
-    let miny = Math.min(...dataObjx);
-    let maxy = Math.max(...dataObjx);
-    
-    const x = d3.scaleTime()
-              .domain([new Date("2018-07-01"), new Date("2021-03-01")])
-              .range([0, width]);
-    const xAxis = d3.axisBottom().scale(x)
-                  .tickFormat(d3.timeFormat("%b %Y"));
 
+    const x = d3.scaleLinear().domain([0, 100]).range([0, width]);
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
-      .call(xAxis);
-      
+      .call(d3.axisBottom(x));
 
-    const y = d3.scaleLinear().domain([miny, maxy]).range([height, 0]);
+    const y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
     svg.append("g").call(d3.axisLeft(y));
-    
-    svg.append("g")
-      .selectAll("dot")
-      .data(data)
+
+    svg
+      .selectAll("whatever")
+      .data(DATA)
       .enter()
       .append("circle")
-        .attr("cx", (d) => y(Date.parse(d.Month)))
-        .attr("cy", (d) => y(d.Total_sales))
-        .attr("r", 8.5)
-        .style("fill", "#69b3a2");
-    })
-    
+      .attr("cx", (d) => x(d.x))
+      .attr("cy", (d) => y(d.y))
+      .attr("r", 7);
   }, []);
 
-  
   return (
     <section
       {...props}
@@ -123,24 +108,12 @@ const FeaturesScatter = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  D3 Attempt
+                  Demo ScatterDemo D3
                   </div>
                 <h3 className="mt-0 mb-12">
                   </h3>
                 <p className="m-0">
-                  Ran out of time to get this to work completed due to work AWS migrations 
-                  <br></br>What I have completed in this project:
-                  <ul>
-                    <li>Application Framework: React D3 with bootstrap</li>
-                    <li>React Routing with a Single Page</li> 
-                    <li>Python Data Transformation, Analysis and Linear Regression</li>
-                  </ul>
-                  Want to complete
-                  <ul>
-                    <li>D3 Bubble Chart of Sales with Category as Radius size of Sales</li>
-                    <li>D3 Visualisations of Unqiue Clients within given months</li> 
-                    <li>D3 Visualisations of Unqiue Clients within given months</li>
-                  </ul>
+                  Copy of data set
                   </p>
               </div>
               <div className={
@@ -160,7 +133,7 @@ const FeaturesScatter = ({
   );
 }
 
-FeaturesScatter.propTypes = propTypes;
-FeaturesScatter.defaultProps = defaultProps;
+ScatterDemo.propTypes = propTypes;
+ScatterDemo.defaultProps = defaultProps;
 
-export default FeaturesScatter;
+export default ScatterDemo;

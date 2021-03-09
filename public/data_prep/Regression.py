@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from statsmodels.tsa.stattools import adfuller
 #read csv file
-df = pd.read_csv("sales_trans.tsv", sep='\t')
+df = pd.read_csv("~/Downloads/sales_trans.tsv", sep='\t')
 
 ### pd  1.2.3 
 ##clean up 
@@ -37,12 +37,12 @@ X = dfDay.iloc[:, 2].values.reshape(-1, 1)  # values converts it into a numpy ar
 Y = dfDay.iloc[:, 1].values.reshape(-1, 1)  # -1 means that calculate the dimension of rows, but have 1 column
 linear_regressor = LinearRegression()  # create object for the class
 linear_regressor.fit(X, Y)  # perform linear regression
-dfDay['y_pred'] = linear_regressor.predict(X)  # make predictions
+y_pred = linear_regressor.predict(X)  # make predictions
 dfDay.loc[(dfDay.Dates==row.Dates), 'slopeCell'] = regressor.coef_
 dfDay.to_csv('daily_linear_regression.csv')
 #check data
 plt.scatter(X, Y)
-plt.plot(X, Y_pred, color='red')
+plt.plot(X, y_pred, color='red')
 plt.show()
 #Timeserries rolling mean
 ###convert day
@@ -65,7 +65,9 @@ linear_regressor.fit(x, y)  # perform linear regression
 y_predm = linear_regressor.predict(x)
 dfMonth['y_pred'] = linear_regressor.predict(x)  # make predictions
 dfMonth.to_json('monthly_linear_regression.json')
-
+plt.scatter(x, y)
+plt.plot(x, y_predm, color='red')
+plt.show()
 ###time series
 dfMonth['Month'] = pd.to_datetime(dfMonth['Month'])
 dfMonth.set_index('Month', inplace = True)
@@ -83,9 +85,10 @@ rolstd = pd.Series(timeseries).rolling(window=12).std()
 
 
 ### I wanted to find the mean of this ...but as you can see - it is not what I expect - I want to fix the data by applying a prediction to the data
+######d3 data
+dfCategory = df.groupby(['Item'])['Gross'].agg('sum').reset_index(name ='Total_sales')
 
-
-
-
-df.to_csv('data.csv')
+dfCategory = dfCategory.sort_values('Total_sales', ascending = False).groupby('Item').head(2)
+dfCategory = dfCategory.head(20)
+dfCategory.to_csv('Category.csv')
 

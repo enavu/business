@@ -50,8 +50,8 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: 'Workflow that just works',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    title: 'Linear Regression',
+    paragraph: 'Covid hit many Small businesses and if they opened in the last 2-3 years, their growth does not say much in terms of true growth after a few years'
   };
 
   return (
@@ -67,13 +67,13 @@ const FeaturesSplit = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                  Monthly growth with Date Ordinal in python
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Jul 2018 - March 2021
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  As you can see, the scatter plot is was growing up untill the second year.  Each dot resembles a month but this shows a downward trend with just about 33 months.
                   </p>
               </div>
               <div className={
@@ -83,7 +83,7 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-01.png')}
+                  src={require('./../../assets/images/month_LR.png')}
                   alt="Features split 01"
                   width={528}
                   height={396} />
@@ -93,13 +93,13 @@ const FeaturesSplit = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                Daily growth with Date Ordinal in python
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                Jul 18 2018 - March 06 2021
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  With 700+ data points, with linear reression, there is a more accurate growth charting with the prediction that the business will continue to grow regardless of the gap of 70 days of government shutdown.
                   </p>
               </div>
               <div className={
@@ -109,24 +109,50 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-02.png')}
+                  src={require('./../../assets/images/daily_LR.png')}
                   alt="Features split 02"
+                  width={528}
+                  height={396} />
+              </div>
+            </div>
+          
+            <div className="split-item">
+              <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+                  Top Services
+                  </div>
+                <h3 className="mt-0 mb-12">
+                  2018 - 2021
+                  </h3>
+                <p className="m-0">
+                  Top services are Pedicures, Rebases
+                </p>
+              </div>
+              <div className={
+                classNames(
+                  'split-item-image center-content-mobile reveal-from-bottom',
+                  imageFill && 'split-item-image-fill'
+                )}
+                data-reveal-container=".split-item">
+                <Image
+                  src={require('./../../assets/images/SalesByCategory.png')}
+                  alt="Features split 01"
                   width={528}
                   height={396} />
               </div>
             </div>
 
             <div className="split-item">
-              <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+              <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
+                Tableau: Are there any Seasonal services?
                   </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                June - July 2018 - Dec/Jan 2019
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+                  With the Top services, they don't seem to change between winter or summer.
+                </p>
               </div>
               <div className={
                 classNames(
@@ -135,8 +161,33 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-03.png')}
-                  alt="Features split 03"
+                  src={require('./../../assets/images/ServicesBySeason.png')}
+                  alt="Features split 02"
+                  width={528}
+                  height={396} />
+              </div>
+            </div>
+            <div className="split-item">
+              <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+                  How many clients do staff see yearly?
+                  </div>
+                <h3 className="mt-0 mb-12">
+                  2018 - 2021
+                  </h3>
+                <p className="m-0">
+                We can understand the top service providers and offer benefits and bonuses. On Average, the top service provider sees about 3800 a person pre-covid!!
+                </p>
+              </div>
+              <div className={
+                classNames(
+                  'split-item-image center-content-mobile reveal-from-bottom',
+                  imageFill && 'split-item-image-fill'
+                )}
+                data-reveal-container=".split-item">
+                <Image
+                  src={require('./../../assets/images/StaffClientsYEarly.png')}
+                  alt="Features split 01"
                   width={528}
                   height={396} />
               </div>

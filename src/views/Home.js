@@ -8,8 +8,8 @@ const Home = () => {
 
   return (
     <>
-      <FeaturesScatter invertMobile topDivider imageFill className="illustration-section-02" />
       <FeaturesSplit invertMobile topDivider imageFill className="illustration-section-02" />
+      <FeaturesScatter invertMobile topDivider imageFill className="illustration-section-02" />
     </>
   );
 }
