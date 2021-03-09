@@ -123,18 +123,18 @@ const FeaturesScatter = ({
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  D3 Attempt
+                  Project Summary:
                   </div>
                 <h3 className="mt-0 mb-12">
                   </h3>
                 <p className="m-0">
-                  Ran out of time to get this to work completed due to work AWS migrations 
                   <br></br>What I have completed in this project:
                   <ul>
                     <li>Application Framework: React D3 with bootstrap</li>
                     <li>React Routing with a Single Page</li> 
                     <li>Python Data Transformation, Analysis and Linear Regression</li>
                     <li>Tableau Visualizations</li>
+                    <li>Application Deployment: Heroku with serve configs</li>
                   </ul>
                   Want to complete
                   <ul>
