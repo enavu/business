@@ -92,3 +92,13 @@ dfCategory = dfCategory.sort_values('Total_sales', ascending = False).groupby('I
 dfCategory = dfCategory.head(20)
 dfCategory.to_csv('Category.csv')
 
+######d3 data
+dfStaffSales = df.groupby(['staff_id'])['Gross'].agg('sum').reset_index(name ='Total_sales')
+dfStaffSales = dfStaffSales.sort_values('Total_sales', ascending = False).groupby('staff_id')
+dfStaffSales = dfStaffSales.head(20)
+
+
+###unique clients
+dfStaff = df.groupby(['staff_id'])['client_id'].nunique().reset_index(name ='unqiue_clients')
+dfStaff = dfStaff.sort_values('unqiue_clients', ascending = False).groupby('staff_id')
+dfStaff = dfStaff.head(20)
