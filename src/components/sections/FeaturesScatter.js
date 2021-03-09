@@ -134,12 +134,11 @@ const FeaturesScatter = ({
                     <li>Application Framework: React D3 with bootstrap</li>
                     <li>React Routing with a Single Page</li> 
                     <li>Python Data Transformation, Analysis and Linear Regression</li>
+                    <li>Tableau Visualizations</li>
                   </ul>
                   Want to complete
                   <ul>
-                    <li>D3 Bubble Chart of Sales with Category as Radius size of Sales</li>
-                    <li>D3 Visualisations of Unqiue Clients within given months</li> 
-                    <li>D3 Visualisations of Unqiue Clients within given months</li>
+                    <li>D3 Interactive Visualizations: Averages between time periods</li>
                   </ul>
                   </p>
               </div>
