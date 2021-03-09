@@ -148,7 +148,6 @@ const FeaturesScatter = ({
                   imageFill && 'split-item-image-fill'
                 )}
                 data-reveal-container=".split-item">
-              <svg id="area" height={400} width={500}></svg>
               </div>
             </div>
 
