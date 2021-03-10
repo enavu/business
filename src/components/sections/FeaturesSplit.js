@@ -50,8 +50,8 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: 'Data Practicum',
-    paragraph: 'There always will be many variations of issues that affect small businesses but specifically last year, Covid-19 was one of them. As a business owner, you want to always make sure you understand your growth and what goes in and out. Here we will do a summary of look at a scattered plot for sales daily and monthly, apply a linear regression so we can see what the growth looks like.  We then take a look at our top performers and plot them with Tableau to see some visualizations.'
+    title: 'Linear Regression',
+    paragraph: 'Covid hit many Small businesses and if they opened in the last 2-3 years, their growth does not say much in terms of true growth after a few years'
   };
 
   return (
@@ -73,9 +73,7 @@ const FeaturesSplit = ({
                   Jul 2018 - March 2021
                   </h3>
                 <p className="m-0">
-                  Here is the scatter plot of Monthly Sales with a Date Ordinal in the x-axis.  Python's matplotlib doesnt take dates as a regerssor on the x-axis so to solve this, we create the Date Ordinal that converts the date to be plotable.
-                  The analyis here is that the scatter plot show that for the first year, the business is growing in sales, up untill the second year, when Covid-19 infected the world.  
-                  Each dot resembles a month and since we only have about 33 months, the regression, with little data, shows a downward trend.
+                  As you can see, the scatter plot is was growing up untill the second year.  Each dot resembles a month but this shows a downward trend with just about 33 months.
                   </p>
               </div>
               <div className={
@@ -101,10 +99,8 @@ const FeaturesSplit = ({
                 Jul 18 2018 - March 06 2021
                   </h3>
                 <p className="m-0">
-                Here is the scatter plot of Daily Sales with a Date Ordinal in the x-axis.  Python's matplotlib doesnt take dates as a regerssor on the x-axis so to solve this, we create the Date Ordinal that converts the date to be plotable.
-                The analyis here is that the scatter plot show that for the first year, the business is growing in sales, up untill the second year, when Covid-19 infected the world.  
-                Each dot resembles a day, the regression, with more data, shows an upward trend.
-                </p>
+                  With 700+ data points, with linear reression, there is a more accurate growth charting with the prediction that the business will continue to grow regardless of the gap of 70 days of government shutdown.
+                  </p>
               </div>
               <div className={
                 classNames(

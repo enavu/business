@@ -63,32 +63,7 @@ const FeaturesScatter = ({
   
   
   useEffect(() => {
-    function getData() {
-      let numItems = 20 + Math.floor(20 * Math.random())
-      let data = []
-      for(let i=0; i<numItems; i++) {
-        data.push({
-          x: Math.random(),
-          y: Math.random(),
-          r: Math.random(),
-          colour: i % 5
-        })
-      }
-      return data
-    }
-    
-    let colours = ['#2176ae', '#57b8ff', '#b66d0d', '#fbb13c', '#fe6847']
-    
-    this.state = {
-      data: getData()
-    }
-
-
-    this.handleClick = this.handleClick.bind(this)
-    this.updateStyleAndAttrs = this.updateChart.bind(this)
-  
-  
-  
+       
     d3.json("/data_prep/monthly_linear_regression.json").then(data => {
     const margin = { top: 10, right: 40, bottom: 30, left: 30 },
     
@@ -173,7 +148,6 @@ const FeaturesScatter = ({
                   imageFill && 'split-item-image-fill'
                 )}
                 data-reveal-container=".split-item">
-              <svg id="area" height={400} width={500}></svg>
               </div>
             </div>
 
